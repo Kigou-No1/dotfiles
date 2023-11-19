@@ -19,17 +19,16 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-patch-dl \
     zdharma-continuum/zinit-annex-rust
 
-zinit ice wait'0'; zinit light zsh-users/zsh-completions
-autoload -Uz compinit && compinit
-
-## 補完で小文字でも大文字にマッチさせる
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-## 補完候補を一覧表示したとき、Tabや矢印で選択できるようにする
-zstyle ':completion:*:default' menu select=1
-
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-autosuggestions
-
-
+zinit ice wait'0'
 ### End of Zinit's installer chunk
+
+autoload -Uz compinit && compinit
+# シンタックスハイライト
+zinit light zsh-users/zsh-syntax-highlighting
+# 入力補完
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+# コマンド履歴を検索
+zinit light zdharma/history-search-multi-word
+
+
