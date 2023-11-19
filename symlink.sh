@@ -14,6 +14,7 @@ ln -s ./tmux/.tmux.conf ~/.tmux.conf
 ln -s ./vim/.vimrc ~/.vimrc
 ln -s ./vim/.vim ~/.vim
 ln -s ./gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+ln -s ./powerline_status/ ~/.config/powerline
 
 echo "Done."
 echo "Please import your BTT settings manually."

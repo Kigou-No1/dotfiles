@@ -58,6 +58,9 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash 
 
 brew bundle -v --file=./brew/Brewfile
 
+echo "Installing powerline for tmux..."
+python3 -m pip install powerline-status
+
 echo "Creating symlinks..."
 if [ ! -d ~/.config/git ]; then
     mkdir ~/.config/git
@@ -76,6 +79,7 @@ ln -s ./vim/.vim ~/.vim
 ln -s ./gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 ln -s ./iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 ln -s  ./bettertouchtool/Default.bttpreset ~/Default.bttpreset
+ln -s ./powerline_status/ ~/.config/powerline
 
 echo "Done."
 echo "Please import your BTT settings manually."
