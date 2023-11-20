@@ -72,14 +72,14 @@ fi
 ln -s ./zsh/.zshrc ~/.zshrc
 ln -s ./zsh/ ~/.zsh
 ln -s ./git/.gitconfig ~/.gitconfig
+ln -s ./git/.gitconfig.public ~/.gitconfig.public
 ln -s ./git/.gitignore ~/.config/git/ignore
 ln -s ./tmux/.tmux.conf ~/.tmux.conf
 ln -s ./vim/.vimrc ~/.vimrc
 ln -s ./vim/.vim ~/.vim
 ln -s ./gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
-ln -s ./iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
-ln -s  ./bettertouchtool/Default.bttpreset ~/Default.bttpreset
 ln -s ./powerline_status/ ~/.config/powerline
+ln -s ./nvim/ ~/.config/nvim
 
 echo "Done."
 echo "Please import your BTT settings manually."
