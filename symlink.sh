@@ -9,6 +9,7 @@ fi
 ln -s ./zsh/.zshrc ~/.zshrc
 ln -s ./zsh/ ~/.zsh
 ln -s ./git/.gitconfig ~/.gitconfig
+ln -s ./git/.gitconfig.public ~/.gitconfig.public
 ln -s ./git/.gitignore ~/.config/git/ignore
 ln -s ./tmux/.tmux.conf ~/.tmux.conf
 ln -s ./vim/.vimrc ~/.vimrc
