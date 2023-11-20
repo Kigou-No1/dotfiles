@@ -1,4 +1,7 @@
 echo "Creating symlinks..."
+
+DOTFILES = "$HOME/dotfiles"
+
 if [ ! -d ~/.config/git ]; then
     mkdir ~/.config/git
 fi
@@ -6,18 +9,15 @@ if [ ! -d ~/.gnupg ]; then
     mkdir ~/.gnupg
 fi
 
-ln -s ./zsh/.zshrc ~/.zshrc
-ln -s ./zsh/ ~/.zsh
-ln -s ./git/.gitconfig ~/.gitconfig
-ln -s ./git/.gitconfig.public ~/.gitconfig.public
-ln -s ./git/.gitignore ~/.config/git/ignore
-ln -s ./tmux/.tmux.conf ~/.tmux.conf
-ln -s ./vim/.vimrc ~/.vimrc
-ln -s ./vim/.vim ~/.vim
-ln -s ./gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
-ln -s ./powerline_status/ ~/.config/powerline
-ln -s ./nvim/ ~/.config/nvim
+ln -s $DOTFILES/zsh/.zshrc ~/.zshrc
+ln -s $DOTFILES/zsh/ ~/.zsh
+ln -s $DOTFILES/git/.gitconfig ~/.gitconfig
+ln -s $DOTFILES/git/.gitconfig.public ~/.gitconfig.public
+ln -s $DOTFILES/git/.gitignore ~/.config/git/ignore
+ln -s $DOTFILES/tmux/.tmux.conf ~/.tmux.conf
+ln -s $DOTFILES/vim/.vimrc ~/.vimrc
+ln -s $DOTFILES/vim/.vim ~/.vim
+ln -s $DOTFILES/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+ln -s $DOTFILES/powerline_status/ ~/.config/powerline
+ln -s $DOTFILES/nvim/ ~/.config/nvim
 
-echo "Done."
-echo "Please import your BTT settings manually."
-echo "Please import your iTerm2 settings manually."
