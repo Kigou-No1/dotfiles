@@ -26,12 +26,11 @@ if [${shell_name} != ""] then;
 fi
 
 # Setup Git
-echo "Setting up Git & Github CLI..."
+echo "Setting up Git..."
 if ! command -v git &> /dev/null; then
     echo "Git is not installed. Installing..."
     brew install git
-    brew install gh
-    echo "Git and Github CLI are installed."
+    echo "Git is installed."
 fi
 
 echo "What is your name?"
@@ -58,8 +57,11 @@ git config --global include.path ~/.gitconfig.public
 gh auth login
 
 # Install softwares
-brew install gnupg
-brew install xoxide
+
+echo "Installing softwares..."
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash # install nvm
+
+brew bundle -v --file=./brew/Brewfile
 
 echo "Installing powerline for tmux..."
 python3 -m pip install powerline-status
