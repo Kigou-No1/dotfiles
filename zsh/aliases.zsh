@@ -7,4 +7,4 @@ alias ls="gls -la --color=auto"
 alias grep="grep --color=auto"
 alias cpwd="pwd | tr -d '\n' | pbcopy"
 
-
+alias rl="source ~/.zshrc"
