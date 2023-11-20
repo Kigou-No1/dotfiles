@@ -27,6 +27,11 @@ fi
 
 # Setup Git
 echo "Setting up Git..."
+if ! command -v git &> /dev/null; then
+    echo "Git is not installed. Installing..."
+    brew install git
+    echo "Git is installed."
+fi
 
 echo "What is your name?"
 read name
