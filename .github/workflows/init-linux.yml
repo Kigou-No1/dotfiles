@@ -3,6 +3,7 @@ name: "test for initializer of dotfiles for Linux"
 on:
   push:
     paths:
+      - '.github/workflows/**'
       - 'bin/**'
       - 'Makefile'
       - 'install.sh'
@@ -28,8 +29,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: install
-      working-directory: .
       run: make install
-    - name: link
-      working-directory: .
-      run: make deploy
+  
+  deploy-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: link
+        run: make deploy
