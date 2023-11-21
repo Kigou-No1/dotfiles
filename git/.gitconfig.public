@@ -28,3 +28,5 @@
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
 
+[gpg "ssh"]
+	allowedSignersFile = /Users/hadzuki/.ssh/allowed_signers

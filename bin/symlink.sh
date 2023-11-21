@@ -20,4 +20,4 @@ ln -s $DOTFILES/vim/.vim ~/.vim
 ln -s $DOTFILES/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 ln -s $DOTFILES/powerline_status/ ~/.config/powerline
 ln -s $DOTFILES/nvim/ ~/.config/nvim
-
+ln -s $DOTFILES/.ssh/allowed_signers ~/.ssh/allowed_signers
