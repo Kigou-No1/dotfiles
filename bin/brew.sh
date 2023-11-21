@@ -9,7 +9,7 @@ if ["$(uname)" == 'Darwin' ]; then
     else
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
-elif ["$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     if type "brew" > /dev/null 2>&1; then
         echo "Linuxbrew is already installed."
     elif [ -d "$HOME/linuxbrew/.linuxbrew" ] ; then
