@@ -7,7 +7,7 @@ ls
 
 # Install zsh
 shell_name=`basename "$(readlink "/proc/$$/exe")"`
-if [${shell_name} != ""] then;
+if [${shell_name} != ""]; then
     echo "Installing zsh..."
     brew install zsh
     chsh -s $(which zsh)
