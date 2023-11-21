@@ -17,11 +17,6 @@ if [ -d $HOME/.zsh ]; then
 fi
 ln -s $DOTFILES/../zsh/ $HOME/.zsh
 
-if [ -e $HOME/.gitconfig ]; then
-    mv -f $HOME/.gitconfig $HOME/.gitconfig.bak
-fi
-ln -s $DOTFILES/../git/.gitconfig $HOME/.gitconfig
-
 if [ -e $HOME/.gitconfig.public ]; then
     mv -f $HOME/.gitconfig.public $HOME/.gitconfig.public.bak
 fi
