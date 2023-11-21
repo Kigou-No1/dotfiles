@@ -3,7 +3,7 @@ echo "Setup your environment..."
 DOTFILES=$(cd $(dirname $0) && pwd)
 ls
 # Install homebrew
-./$DOTFILES/bin/brew.sh
+.$DOTFILES/bin/brew.sh
 
 # Install zsh
 shell_name = `basename "$(readlink "/proc/$$/exe")"`
