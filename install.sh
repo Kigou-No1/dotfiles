@@ -1,7 +1,7 @@
 set -xeu
 echo "Setup your environment..."
 DOTFILES=$(cd $(dirname $0) && pwd)
-
+ls
 # Install homebrew
 ./$DOTFILES/bin/brew.sh
 
