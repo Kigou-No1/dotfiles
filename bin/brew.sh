@@ -4,12 +4,12 @@ DOTFILES=$(cd $(dirname $0) && pwd)
 # Install Homebrew
 echo "Installing Homebrew..."
 if [ "$(uname)" == 'Darwin' ]; then
-    if [ !$(command -v brew) == '']; then
+    if [ ! $(command -v brew) -eq '']; then
         echo "Homebrew is already installed."
     else
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
-elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+elif [ "$(expr substr $(uname -s) 1 5)" -eq 'Linux' ]; then
     if type "brew" > /dev/null 2>&1; then
         echo "Linuxbrew is already installed."
     elif [ -d "$HOME/linuxbrew/.linuxbrew" ] ; then
