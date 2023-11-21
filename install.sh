@@ -14,16 +14,16 @@ if [${shell_name} != ""] then;
 fi
 
 echo "Installing other softwares..."
-./$DOTFILES/bin/misc-softwares.sh
+.$DOTFILES/bin/misc-softwares.sh
 
 # Create symlinks
 echo "Creating symlinks..."
-./$DOTFILES/bin/symlink.sh
+.$DOTFILES/bin/symlink.sh
 
 if ["$(uname)" == 'Darwin' ]; then
     echo "configuring mac..."
     chmod +x $DOTFILES/macos/defaults.sh
-    ./$DOTFILES/macos/defaults.sh
+    .$DOTFILES/macos/defaults.sh
 fi
 
 echo "Done."
