@@ -3,8 +3,8 @@ DOTFILES=$(cd $(dirname $0) && pwd)
 
 # Install Homebrew
 echo "Installing Homebrew..."
-if ["$(uname)" == 'Darwin' ]; then
-    if [!$(command -v brew) == '']; then
+if [ "$(uname)" == 'Darwin' ]; then
+    if [ !$(command -v brew) == '']; then
         echo "Homebrew is already installed."
     else
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
