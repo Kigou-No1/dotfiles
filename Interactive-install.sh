@@ -19,7 +19,7 @@ shell_name=`basename "$(readlink "/proc/$$/exe")"`
 if [${shell_name} != ""]; then
     echo "Installing zsh..."
     brew install zsh
-    chsh -s $(which zsh)
+    sudo chsh -s $(which zsh)
 fi
 
 # Setup Git
