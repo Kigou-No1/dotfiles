@@ -30,8 +30,8 @@ fi
 
 # Install softwares
 echo "Installing softwares..."
-if ["$(uname)" == 'Darwin' ]; then
+if [ "$(uname)" = 'Darwin' ]; then
     brew bundle --file=$DOTFILES/../brew/Brewfile.mac
-elif ["$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
     brew bundle --file=$DOTFILES/../brew/Brewfile.linux
 fi
