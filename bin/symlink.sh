@@ -13,7 +13,7 @@ fi
 ln -s $DOTFILES/../zsh/.zshrc $HOME/.zshrc
 
 if [ -d $HOME/.zsh ]; then
-    mv -f $HOME/.zshenv $HOME/.zshenv.bak
+    mv -f $HOME/.zsh $HOME/.zsh.bak
 fi
 ln -s $DOTFILES/../zsh/ $HOME/.zsh
 
