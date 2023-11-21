@@ -34,5 +34,6 @@ jobs:
   deploy-test:
     runs-on: macos-latest
     steps:
+    - uses: actions/checkout@v2
     - name: link
       run: make deploy
