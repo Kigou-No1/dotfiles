@@ -7,9 +7,6 @@ if [!"$(uname)" == 'Darwin' ]; then
     exit 0
 fi
 
-# Add permissions
-chmod +x ./$DOTFILES/bin/*.sh
-
 # Install fonts
 echo "Installing fonts..."
 cp ./fonts/* ~/Library/Fonts/
