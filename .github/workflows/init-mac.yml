@@ -25,6 +25,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: install
-      run: make init
+      run: make install
     - name: link
       run: make deploy
