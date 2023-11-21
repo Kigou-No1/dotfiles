@@ -3,7 +3,7 @@ echo "Creating symlinks..."
 
 DOTFILES=$(cd $(dirname $0) && pwd)
 
-if [! -d ~/.config ]; then
+if [ ! -d ~/.config ]; then
     mkdir -p ~/.config
 fi
 
