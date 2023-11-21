@@ -3,61 +3,61 @@ echo "Creating symlinks..."
 
 DOTFILES=$(cd $(dirname $0) && pwd)
 
-if [ ! -d ~/.config ]; then
-    mkdir -p ~/.config
+if [ ! -d $HOME/.config ]; then
+    mkdir -p $HOME/.config
 fi
 
-if [ -e ~/.zshrc ]; then
-    mv -f ~/.zshrc ~/.zshrc.bak
+if [ -e $HOME/.zshrc ]; then
+    mv -f $HOME/.zshrc $HOME/.zshrc.bak
 fi
-ln -s $DOTFILES/../../zsh/.zshrc ~/.zshrc
+ln -s $DOTFILES/../../zsh/.zshrc $HOME/.zshrc
 
-if [ -d ~/.zsh ]; then
-    mv -f ~/.zshenv ~/.zshenv.bak
+if [ -d $HOME/.zsh ]; then
+    mv -f $HOME/.zshenv $HOME/.zshenv.bak
 fi
-ln -s $DOTFILES/../zsh/ ~/.zsh
+ln -s $DOTFILES/../zsh/ $HOME/.zsh
 
-if [ -e ~/.gitconfig ]; then
-    mv -f ~/.gitconfig ~/.gitconfig.bak
+if [ -e $HOME/.gitconfig ]; then
+    mv -f $HOME/.gitconfig $HOME/.gitconfig.bak
 fi
-ln -s $DOTFILES/../git/.gitconfig ~/.gitconfig
+ln -s $DOTFILES/../git/.gitconfig $HOME/.gitconfig
 
-if [ -e ~/.gitconfig.public ]; then
-    mv -f ~/.gitconfig.public ~/.gitconfig.public.bak
+if [ -e $HOME/.gitconfig.public ]; then
+    mv -f $HOME/.gitconfig.public $HOME/.gitconfig.public.bak
 fi
-ln -s $DOTFILES/../git/.gitconfig.public ~/.gitconfig.public
+ln -s $DOTFILES/../git/.gitconfig.public $HOME/.gitconfig.public
 
-mkdir -p ~/.config/git
-if [ -e ~/.config/git/ignore ]; then
-    mv -f ~/.config/git/ignore ~/.config/git/ignore.bak
+mkdir -p $HOME/.config/git
+if [ -e $HOME/.config/git/ignore ]; then
+    mv -f $HOME/.config/git/ignore $HOME/.config/git/ignore.bak
 fi
-ln -s $DOTFILES/../git/.gitignore ~/.config/git/ignore
+ln -s $DOTFILES/../git/.gitignore $HOME/.config/git/ignore
 
-if [ -e ~/.tmux.conf ]; then
-    mv -f ~/.tmux.conf ~/.tmux.conf.bak
+if [ -e $HOME/.tmux.conf ]; then
+    mv -f $HOME/.tmux.conf $HOME/.tmux.conf.bak
 fi
-ln -s $DOTFILES/../tmux/.tmux.conf ~/.tmux.conf
+ln -s $DOTFILES/../tmux/.tmux.conf $HOME/.tmux.conf
 
-mkdir -p ~/.gnupg
-if [ -e ~/.gnupg/gpg-agent.conf ]; then
-    mv -f ~/.gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf.bak
+mkdir -p $HOME/.gnupg
+if [ -e $HOME/.gnupg/gpg-agent.conf ]; then
+    mv -f $HOME/.gnupg/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf.bak
 fi
-ln -s $DOTFILES/../gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+ln -s $DOTFILES/../gpg/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
 
-mkdir -p ~/.config/powerline
-if [ -d ~/.config/powerline ]; then
-    mv -f ~/.config/powerline ~/.config/powerline.bak
+mkdir -p $HOME/.config/powerline
+if [ -d $HOME/.config/powerline ]; then
+    mv -f $HOME/.config/powerline $HOME/.config/powerline.bak
 fi
-ln -s $DOTFILES/../powerline_status/ ~/.config/powerline
+ln -s $DOTFILES/../powerline_status/ $HOME/.config/powerline
 
-mkdir -p ~/.config/nvim
-if [ -d ~/.config/nvim ]; then
-    mv -f ~/.config/nvim ~/.config/nvim.bak
+mkdir -p $HOME/.config/nvim
+if [ -d $HOME/.config/nvim ]; then
+    mv -f $HOME/.config/nvim $HOME/.config/nvim.bak
 fi
-ln -s $DOTFILES/../nvim/ ~/.config/nvim
+ln -s $DOTFILES/../nvim/ $HOME/.config/nvim
 
-mkdir -p ~/.ssh
-if [ -e ~/.ssh/alloed_signers ]; then
-    mv -f ~/.ssh/allowed_signers ~/.ssh/allowed_signers.bak
+mkdir -p $HOME/.ssh
+if [ -e $HOME/.ssh/alloed_signers ]; then
+    mv -f $HOME/.ssh/allowed_signers $HOME/.ssh/allowed_signers.bak
 fi
-ln -s $DOTFILES/../.ssh/allowed_signers ~/.ssh/allowed_signers
+ln -s $DOTFILES/../.ssh/allowed_signers $HOME/.ssh/allowed_signers
