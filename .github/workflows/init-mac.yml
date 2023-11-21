@@ -1,4 +1,4 @@
-name: "test for initializer of dotfiles for Linux"
+name: "test for initializer of dotfiles for macOS"
 
 on:
   push:
