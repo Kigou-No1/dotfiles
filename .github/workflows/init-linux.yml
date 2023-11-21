@@ -2,8 +2,11 @@ name: "test for initializer of dotfiles for Linux"
 
 on:
   push:
-    branches:
-      - main
+    paths:
+      - 'bin/**'
+      - 'Makefile'
+      - 'install.sh'
+      - 'Interactive-install.sh'
 
 jobs:
   unit-test:
