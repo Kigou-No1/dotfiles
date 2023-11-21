@@ -3,7 +3,7 @@ echo "Setup your environment..."
 DOTFILES=$(cd $(dirname $0) && pwd)
 ls
 # Install homebrew
-.$DOTFILES/bin/brew.sh
+./bin/brew.sh
 
 # Install zsh
 shell_name = `basename "$(readlink "/proc/$$/exe")"`
@@ -14,16 +14,15 @@ if [${shell_name} != ""] then;
 fi
 
 echo "Installing other softwares..."
-.$DOTFILES/bin/misc-softwares.sh
+./bin/misc-softwares.sh
 
 # Create symlinks
 echo "Creating symlinks..."
-.$DOTFILES/bin/symlink.sh
+./bin/symlink.sh
 
 if ["$(uname)" == 'Darwin' ]; then
     echo "configuring mac..."
-    chmod +x $DOTFILES/macos/defaults.sh
-    .$DOTFILES/macos/defaults.sh
+    ./macos/defaults.sh
 fi
 
 echo "Done."

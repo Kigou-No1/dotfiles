@@ -12,7 +12,7 @@ echo "Installing fonts..."
 cp ./fonts/* ~/Library/Fonts/
 
 # Install homebrew and softwares
-./$DOTFILES/bin/brew.sh
+./bin/brew.sh
 
 # Install zsh
 shell_name = `basename "$(readlink "/proc/$$/exe")"`
@@ -24,18 +24,18 @@ fi
 
 # Setup Git
 echo "Setting up Git..."
-./$DOTFILES/bin/setup-git.sh
+./bin/setup-git.sh
 
 echo "Installing other softwares..."
-./$DOTFILES/bin/misc-softwares.sh
+./bin/misc-softwares.sh
 
 # Create symlinks
 echo "Creating symlinks..."
-./$DOTFILES/bin/symlink.sh
+./bin/symlink.sh
 
 if ["$(uname)" == 'Darwin' ]; then
     echo "configuring mac..."
-    ./$DOTFILES/macos/defaults.sh
+    ./macos/defaults.sh
 fi
 
 
