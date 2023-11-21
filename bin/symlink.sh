@@ -1,7 +1,7 @@
 set -xeu
 echo "Creating symlinks..."
 
-DOTFILES = $(cd $(dirname $0) && pwd)
+$DOTFILES = $(cd $(dirname $0) && pwd)
 
 mv ~/.zshrc ~/.zshrc.bak
 ln -s $DOTFILES/../../zsh/.zshrc ~/.zshrc
