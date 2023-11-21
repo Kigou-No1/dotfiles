@@ -38,7 +38,7 @@ if [ -e ~/.tmux.conf ]; then
 fi
 ln -s $DOTFILES/../tmux/.tmux.conf ~/.tmux.conf
 
-mkdir -p ~/.config/gnupg
+mkdir -p ~/.gnupg
 if [ -e ~/.gnupg/gpg-agent.conf ]; then
     mv -f ~/.gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf.bak
 fi
