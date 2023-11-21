@@ -10,7 +10,7 @@ fi
 if [ -e $HOME/.zshrc ]; then
     mv -f $HOME/.zshrc $HOME/.zshrc.bak
 fi
-ln -s $DOTFILES/../../zsh/.zshrc $HOME/.zshrc
+ln -s $DOTFILES/../zsh/.zshrc $HOME/.zshrc
 
 if [ -d $HOME/.zsh ]; then
     mv -f $HOME/.zshenv $HOME/.zshenv.bak
