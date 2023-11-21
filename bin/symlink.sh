@@ -3,37 +3,61 @@ echo "Creating symlinks..."
 
 DOTFILES=$(cd $(dirname $0) && pwd)
 
-mv -f ~/.zshrc ~/.zshrc.bak
+if [! -d ~/.config ]; then
+    mkdir -p ~/.config
+fi
+
+if [ -e ~/.zshrc ]; then
+    mv -f ~/.zshrc ~/.zshrc.bak
+fi
 ln -s $DOTFILES/../../zsh/.zshrc ~/.zshrc
 
-mv -f ~/.zsh ~/.zsh.bak
+if [ -d ~/.zsh ]; then
+    mv -f ~/.zshenv ~/.zshenv.bak
+fi
 ln -s $DOTFILES/../zsh/ ~/.zsh
 
-mv -f ~/.gitconfig ~/.gitconfig.bak
+if [ -e ~/.gitconfig ]; then
+    mv -f ~/.gitconfig ~/.gitconfig.bak
+fi
 ln -s $DOTFILES/../git/.gitconfig ~/.gitconfig
 
-mv -f ~/.gitconfig.public ~/.gitconfig.public.bak
+if [ -e ~/.gitconfig.public ]; then
+    mv -f ~/.gitconfig.public ~/.gitconfig.public.bak
+fi
 ln -s $DOTFILES/../git/.gitconfig.public ~/.gitconfig.public
 
 mkdir -p ~/.config/git
-mv -f ~/.config/git/ignore ~/.config/git/ignore.bak
+if [ -e ~/.config/git/ignore ]; then
+    mv -f ~/.config/git/ignore ~/.config/git/ignore.bak
+fi
 ln -s $DOTFILES/../git/.gitignore ~/.config/git/ignore
 
-mv -f ~/.tmux.conf ~/.tmux.conf.bak
+if [ -e ~/.tmux.conf ]; then
+    mv -f ~/.tmux.conf ~/.tmux.conf.bak
+fi
 ln -s $DOTFILES/../tmux/.tmux.conf ~/.tmux.conf
 
 mkdir -p ~/.config/gnupg
-mv -f ~/.gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf.bak
+if [ -e ~/.gnupg/gpg-agent.conf ]; then
+    mv -f ~/.gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf.bak
+fi
 ln -s $DOTFILES/../gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
 mkdir -p ~/.config/powerline
-mv -f ~/.config/powerline ~/.config/powerline.bak
+if [ -d ~/.config/powerline ]; then
+    mv -f ~/.config/powerline ~/.config/powerline.bak
+fi
 ln -s $DOTFILES/../powerline_status/ ~/.config/powerline
 
 mkdir -p ~/.config/nvim
-mv -f ~/.config/nvim ~/.config/nvim.bak
+if [ -d ~/.config/nvim ]; then
+    mv -f ~/.config/nvim ~/.config/nvim.bak
+fi
 ln -s $DOTFILES/../nvim/ ~/.config/nvim
 
-mkdir -p ~/.config/karabiner
-mv -f ~/.ssh/allowed_signers ~/.ssh/allowed_signers.bak
+mkdir -p ~/.ssh
+if [ -e ~/.ssh/alloed_signers ]; then
+    mv -f ~/.ssh/allowed_signers ~/.ssh/allowed_signers.bak
+fi
 ln -s $DOTFILES/../.ssh/allowed_signers ~/.ssh/allowed_signers
