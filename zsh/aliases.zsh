@@ -8,3 +8,6 @@ alias grep="grep --color=auto"
 alias cpwd="pwd | tr -d '\n' | pbcopy"
 
 alias rl="source ~/.zshrc"
+
+alias vim="nvim"
+alias vi="nvim"
