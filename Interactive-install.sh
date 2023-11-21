@@ -1,6 +1,6 @@
 set -xeu
 echo "Setup your environment..."
-$DOTFILES = $(cd $(dirname $0) && pwd)
+DOTFILES=$(cd $(dirname $0) && pwd)
 
 if [!"$(uname)" == 'Darwin' ]; then
     echo "Please use install.sh for Linux."

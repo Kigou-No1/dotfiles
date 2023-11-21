@@ -1,5 +1,5 @@
 set -xeu
-DOTFILES = $(cd $(dirname $0) && pwd
+DOTFILES=$(cd $(dirname $0) && pwd
 
 # Install Homebrew
 echo "Installing Homebrew..."
