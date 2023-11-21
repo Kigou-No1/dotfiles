@@ -1,0 +1,30 @@
+name: "test for initializer of dotfiles for Linux"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  unit-test:
+    runs-on: macos-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        script: ["./brew.sh", "./misc-softwares.sh","./symlink.sh"]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: unit-test of ${{matrix.script}}
+        working-directory: ./bin/
+        run: ${{matrix.script}}
+
+  init-test:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: install
+      run: make init
+    - name: link
+      run: make deploy
