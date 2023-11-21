@@ -3,13 +3,13 @@ DOTFILES=$(cd $(dirname $0) && pwd)
 
 # Install Homebrew
 echo "Installing Homebrew..."
-if [ "$(uname)" = 'Darwin' ]; then
+if [ `uname` = 'Darwin' ]; then
     if [ ! $(command -v brew) = '']; then
         echo "Homebrew is already installed."
     else
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
-elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
+elif [ `uname` = 'Linux' ]; then
     if type "brew" > /dev/null 2>&1; then
         echo "Linuxbrew is already installed."
     elif [ -d "$HOME/linuxbrew/.linuxbrew" ] ; then
@@ -30,8 +30,8 @@ fi
 
 # Install softwares
 echo "Installing softwares..."
-if [ "$(uname)" = 'Darwin' ]; then
+if [ `uname` = 'Darwin' ]; then
     brew bundle --file=$DOTFILES/../brew/Brewfile.mac
-elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
+elif [ `uname` = 'Linux' ]; then
     brew bundle --file=$DOTFILES/../brew/Brewfile.linux
 fi
