@@ -1,6 +1,6 @@
 <div align="center">
 
-[![test for initializer of dotfiles for macOS](https://github.com/Kigou-No1/dotfiles/actions/workflows/init-mac.yml/badge.svg)](https://github.com/Kigou-No1/dotfiles/actions/workflows/init-mac.yml)<br>
+[![test for initializer of dotfiles for macOS](https://github.com/Kigou-No1/dotfiles/actions/workflows/init-mac.yml/badge.svg)](https://github.com/Kigou-No1/dotfiles/actions/workflows/init-mac.yml)
 
 [![test for initializer of dotfiles for Linux](https://github.com/Kigou-No1/dotfiles/actions/workflows/init-linux.yml/badge.svg)](https://github.com/Kigou-No1/dotfiles/actions/workflows/init-linux.yml)
 
