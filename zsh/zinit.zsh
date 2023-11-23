@@ -30,5 +30,5 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 # コマンド履歴を検索
 zinit light zdharma/history-search-multi-word
-
+zinit light asdf-vm/asdf
 
