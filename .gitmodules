@@ -1,6 +1,3 @@
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
-[submodule "hammerspoon/hs._asm.spaces"]
-	path = hammerspoon/hs._asm.spaces
-	url = git@github.com:asmagill/hs._asm.spaces.git
