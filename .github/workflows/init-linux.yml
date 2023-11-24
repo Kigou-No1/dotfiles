@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        script: ["./brew.sh", "./misc-softwares.sh","./symlink.sh"]
+        script: ["./brew.sh", "./symlink.sh"]
 
     steps:
       - uses: actions/checkout@v2
