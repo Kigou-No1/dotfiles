@@ -20,5 +20,4 @@ brew "tmux"
 brew "youtube-dl"
 brew "zoxide"
 brew "zsh-completions"
-brew "jorgelbg/tap/pinentry-touchid"
 
