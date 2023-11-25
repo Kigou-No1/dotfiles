@@ -9,9 +9,9 @@ local open_alacritty = function()
   elseif app:isFrontmost() then
     app:hide()
   else
-    spaces.moveWindowToSpace(app:getWindow(), spaces.activeSpaceOnScreen("Main"))
-    app:setFrontmost()
+    spaces.moveWindowToSpace(app:focusedWindow():id(), spaces.focusedSpace())
+    app:focusedWindow():focus()
   end
 end
 
-hs.hotkey.bind({ "option" }, "space", open_alacritty())
+hs.hotkey.bind({ "option" }, "space", nil, open_alacritty())
