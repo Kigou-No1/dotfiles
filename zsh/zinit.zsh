@@ -20,6 +20,8 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 
 zinit ice wait'0'
+zinit ice depth=1
+zinit light romkatv/powerlevel10k
 ### End of Zinit's installer chunk
 
 autoload -Uz compinit && compinit
