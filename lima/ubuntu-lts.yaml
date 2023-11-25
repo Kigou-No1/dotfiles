@@ -1,0 +1,37 @@
+cpus: 2
+memory: "4GiB"
+disk: "100GiB"
+
+vmType: "vz" # experimental feature
+
+images:
+- location: "https://cloud-images.ubuntu.com/releases/22.04/release-20231026/ubuntu-22.04-server-cloudimg-amd64.img"
+  arch: "x86_64"
+  digest: "sha256:054db2d88c454bb0ad8dfd8883955e3946b57d2b0bf0d023f3ade3c93cdd14e5"
+- location: "https://cloud-images.ubuntu.com/releases/22.04/release-20231026/ubuntu-22.04-server-cloudimg-arm64.img"
+  arch: "aarch64"
+  digest: "sha256:eafa7742ce5ff109222ea313d31ea366d587b4e89b900b11d8285ae775dfe8c3"
+- location: "https://cloud-images.ubuntu.com/releases/22.04/release/ubuntu-22.04-server-cloudimg-amd64.img"
+  arch: "x86_64"
+- location: "https://cloud-images.ubuntu.com/releases/22.04/release/ubuntu-22.04-server-cloudimg-arm64.img"
+  arch: "aarch64"
+
+mountType: "virtiofs"
+
+mounts:
+- location: "~/git/"
+  writable: true
+- location: "/tmp/lima"
+  writable: true
+
+rosetta:
+  # Enable Rosetta for Linux.
+  # Hint: try `softwareupdate --install-rosetta` if Lima gets stuck at `Installing rosetta...`
+  enabled: true
+  # Register rosetta to /proc/sys/fs/binfmt_misc
+  binfmt: true
+
+ssh:
+  loadDotSSHPubKeys: false
+  localPort: 3393
+
