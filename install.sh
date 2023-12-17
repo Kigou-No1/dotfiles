@@ -17,9 +17,11 @@ fi
 echo "Creating symlinks..."
 ./bin/symlink.sh
 
-if [ "$(uname)" == 'Darwin' ]; then
+if [ "$(uname)" = 'Darwin' ]; then
     echo "configuring mac..."
     ./macos/defaults.sh
-fi
+elif [ "$(uname)" = "Linux" ]; then
+    echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >> zsh/linux.zsh
+else
 
 echo "Done."
