@@ -1,0 +1,8 @@
+[gpg "ssh"]
+	program = "/mnt/c/Users/hadzuki/AppData/Local/1Password/app/8/op-ssh-sign-wsl"
+
+[credential "https://github.com"]
+	helper = 
+
+[credential "https://gist.github.com"]
+	helper = 

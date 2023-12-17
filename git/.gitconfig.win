@@ -1,0 +1,9 @@
+[gpg "ssh"]
+	program = "C:/Users/hadzuki/AppData/Local/1Password/app/8/op-ssh-sign.exe"
+
+[credential "https://github.com"]
+	helper = 
+	helper = !'C:\\Users\\hadzuki\\scoop\\apps\\gh\\current\\bin\\gh.exe' auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !'C:\\Users\\hadzuki\\scoop\\apps\\gh\\current\\bin\\gh.exe' auth git-credential
