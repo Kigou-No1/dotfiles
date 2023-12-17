@@ -21,6 +21,11 @@ if [ -e $HOME/.gitconfig.os ]; then
     mv -f $HOME/.gitconfig.os $HOME/.gitconfig.os.bak
 fi
 
+if [ -e $HOME/.gitcofig ]; then
+    mv -f $HOME/.gitconfig $HOME/.gitconfig.bak
+fi
+ln -s $DOTFILES/../git/.gitconfig $HOME/.gitconfig
+
 if [ `uname` = 'Darwin' ]; then
     ln -s $DOTFILES/../git/.gitconfig.mac $HOME/.gitconfig.os
 elif [ `uname` = 'Linux' ]; then
