@@ -17,10 +17,15 @@ if [ -d $HOME/.zsh ]; then
 fi
 ln -s $DOTFILES/../zsh/ $HOME/.zsh
 
-if [ -e $HOME/.gitconfig.public ]; then
-    mv -f $HOME/.gitconfig.public $HOME/.gitconfig.public.bak
+if [ -e $HOME/.gitconfig.os ]; then
+    mv -f $HOME/.gitconfig.os $HOME/.gitconfig.os.bak
 fi
-ln -s $DOTFILES/../git/.gitconfig.public $HOME/.gitconfig.public
+
+if [ `uname` = 'Darwin' ]; then
+    ln -s $DOTFILES/../git/.gitconfig.mac $HOME/.gitconfig.os
+elif [ `uname` = 'Linux' ]; then
+    ln -s $DOTFILES/../git/.gitconfig.linux $HOME/.gitconfig.os
+fi
 
 mkdir -p $HOME/.config/git
 if [ -e $HOME/.config/git/ignore ]; then
