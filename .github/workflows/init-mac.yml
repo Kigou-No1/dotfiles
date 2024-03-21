@@ -8,6 +8,7 @@ on:
       - 'Makefile'
       - 'install.sh'
       - 'Interactive-install.sh'
+  workflow_dispatch:
 
 jobs:
   unit-test:
