@@ -22,6 +22,6 @@ if [ "$(uname)" = 'Darwin' ]; then
     ./macos/defaults.sh
 elif [ "$(uname)" = "Linux" ]; then
     echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >> zsh/linux.zsh
-else
+fi
 
 echo "Done."
