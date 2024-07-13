@@ -1,4 +1,3 @@
-brew "coreutils"
 brew "asdf"
 brew "bat"
 brew "cloudflared"
@@ -18,4 +17,3 @@ brew "tmux"
 brew "youtube-dl"
 brew "zoxide"
 brew "zsh-completions"
-
