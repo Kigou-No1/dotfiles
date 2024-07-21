@@ -13,7 +13,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*:default' menu select=1
 
 # compdef docker
-compdef _docker docker
+# compdef _docker docker
 
 # zsh completion for docker                               -*- shell-script -*-
 

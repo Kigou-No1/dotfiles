@@ -7,7 +7,7 @@ alias gcm="git commit -m"
 alias gps="git push"
 alias gpl="git pull"
 
-alias ls="exa -la --icons"
+alias ls="eza -la --icons"
 alias cat="bat"
 alias find="fd -H"
 alias fd="fd -H"
