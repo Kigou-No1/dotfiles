@@ -1,5 +1,5 @@
 eval "$(sheldon source)"
-export STARSHIP_CONFIG="~/.config/starship/starship.toml"
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
 zsh-defer eval "$(zoxide init zsh)"
 zsh-defer eval "$(chezmoi completion zsh)"
