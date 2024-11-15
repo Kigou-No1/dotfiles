@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 {{ if .performInitialize }}
 {{ if eq .chezmoi.os "darwin" }}
@@ -7,17 +7,11 @@ NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Ho
 
 brew bundle --file=$DOTFILES/../brew/Brewfile.mac
 
-# Install development runtimes
-asdf plugin-add nodejs
-asdf plugin-add python
-
-asdf install nodejs latest
-asdf install python latest
-
-asdf global nodejs latest
-asdf global python latest
-
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y # Install rust silently
+cargo install sheldon # Install Zsh package manager
+
+chmod +x ../asdf.sh
+zsh ../asdf.sh
 
 mkdir -p ~/repo/github.com/Kigou-No1
 
