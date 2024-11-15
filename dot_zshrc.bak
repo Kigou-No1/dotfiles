@@ -1,0 +1,26 @@
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+
+ZSH_DIR="${HOME}/.zsh"
+
+if [ -d $ZSH_DIR ] && [ -r $ZSH_DIR ] && [ -x $ZSH_DIR ]; then
+    for file in ${ZSH_DIR}/**/*.zsh; do
+        [ -r $file ] && source $file
+    done
+fi
+
+# load cargo
+. "$HOME/.cargo/env"
+
+# Environments
+export EDITOR='code-insiders'
+export GPG_TTY=$(tty)
+
+# completions
+[ -s "/home/hadzuki/.bun/_bun" ] && source "/home/hadzuki/.bun/_bun"
+
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+autoload -U compinit; compinit
