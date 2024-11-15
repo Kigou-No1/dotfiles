@@ -18,12 +18,12 @@ sudo apt update -y && sudo apt upgrade -y
 sudo apt install bat build-essential \
                 cloudflared curl fd-find \
                 fzf gcc gh git gnupg g++ jq\
-                libtool make neofetch ripgrep \
+                libtool libssl-dev make neofetch pkg-config ripgrep \
                 tmux tree unzip wget zoxide zsh -y
 
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.1
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y # Install rust silently
-
+. "$HOME/.cargo/env"
 cargo install sheldon # Install Zsh package manager
 
 chsh -s $(which zsh)
