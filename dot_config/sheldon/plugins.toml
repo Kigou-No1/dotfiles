@@ -43,6 +43,10 @@ github = "asdf-vm/asdf"
 github = 'azu/ni.zsh'
 use = ['ni.zsh']
 
+[plugins.zsh-z]
+github = "agkozak/zsh-z"
+
+
 # For example:
 #
 # [plugins.base16]
