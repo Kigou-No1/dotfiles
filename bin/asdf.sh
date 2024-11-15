@@ -1,3 +1,5 @@
+. "$HOME/.asdf/asdf.sh"
+
 asdf plugin-add nodejs
 asdf plugin-add python
 asdf plugin-add chezmoi 
