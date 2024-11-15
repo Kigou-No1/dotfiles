@@ -11,10 +11,15 @@
 # See the documentation for more https://github.com/rossmacarthur/sheldon#readme
 
 shell = "zsh"
+
+[templates]
+defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+
 apply = ["defer"]
 
 [plugins.zsh-defer]
 github = "romkatv/zsh-defer"
+
 
 [plugins.fzf-tab]
 github = 'Aloxaf/fzf-tab'
