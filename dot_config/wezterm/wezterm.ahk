@@ -1,24 +1,20 @@
-!+t::
-  ApplicationBinaryName=wezterm-gui.exe
-  ApplicationBinaryPath="C:\Program Files\WezTerm\wezterm-gui.exe"
+#SingleInstance Force
+#Space::ToggleWindowVisibility("org.wezfurlong.wezterm", "wezterm-gui.exe")
+ToggleWindowVisibility(cls, exe) {
+  DetectHiddenWindows(true)
 
-  Process, Exist, %ApplicationBinaryName%
-  if ErrorLevel=0
-  {
-    Run, %ApplicationBinaryPath%, %A_WorkingDir%
-    WinWait, ahk_exe %ApplicationBinaryName%
-    WinActivate, ahk_exe %ApplicationBinaryName%
-    Exit
+  if WinExist("ahk_class" cls) {
+    if WinActive("ahk_class" cls) {
+      WinHide("ahk_class" cls)
+      Send("!{Tab}")
+    } else {
+      WinMaximize("ahk_class" cls)
+      WinShow("ahk_class" cls)
+      WinActivate("ahk_class" cls)
+    }
+  } else {
+    Run(exe)
   }
 
-  WinGet, WinState, MinMax, ahk_exe %ApplicationBinaryName%
-  if WinState=-1
-  {
-    WinActivate, ahk_exe %ApplicationBinaryName%
-  }
-  else
-  {
-    WinMinimize, ahk_exe %ApplicationBinaryName%
-  }
-
-  return
+  DetectHiddenWindows(false)
+}
