@@ -1,5 +1,5 @@
 {{ if .performInitialize }}
-{{ if eq .chezmoi.os "darwin" }}
+{{ if -eq .chezmoi.os "darwin" }}
 
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
