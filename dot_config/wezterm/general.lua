@@ -10,6 +10,7 @@ function module.apply_config(config)
     config.window_decorations = "RESIZE"; -- Remove title bar
     config.hide_tab_bar_if_only_one_tab = true;
     config.switch_to_last_active_tab_when_closing_tab = true;
+    quit_when_all_windows_are_closed = false;
 
     if wezterm.target_triple == "x86_64-pc-windows-msvc" then
         config.default_prog = {
