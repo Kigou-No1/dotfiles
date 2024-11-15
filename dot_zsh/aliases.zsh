@@ -8,7 +8,7 @@ alias gps="git push"
 alias gpl="git pull"
 
 alias ls="eza -la --icons"
-alias cat="bat"
+alias cat="batcat"
 alias find="fd -H"
 alias fd="fd -H"
 alias grep="grep --color=auto"
