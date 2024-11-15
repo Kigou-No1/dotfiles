@@ -1,0 +1,12 @@
+{{- $email := promptStringOnce . "email" "What email do you want to use on this environment" -}}
+{{- $username := promptStringOnce . "username" "What is your username" -}}
+{{- $performInitialize := promptBoolOnce . "performInitialize" "Do you want to perform initialization of your environment" -}}
+
+[data]
+    email = {{ $email | quote }}
+    username = {{ $username | quote }}
+    performInitialize = {{ $performInitialize }}
+
+[edit]
+    command = "code-insiders"
+    args = ["--wait"]
