@@ -8,6 +8,7 @@ ToggleWindowVisibility(cls, exe) {
       WinHide("ahk_class" cls)
       Send("!{Tab}")
     } else {
+      WinMaximize("ahk_class" cls)
       WinShow("ahk_class" cls)
       WinActivate("ahk_class" cls)
     }
