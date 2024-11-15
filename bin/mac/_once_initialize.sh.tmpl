@@ -1,5 +1,5 @@
 {{ if .performInitialize }}
-{{ if -eq .chezmoi.os "darwin" }}
+{{ if eq .chezmoi.os "darwin" }}
 
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -31,5 +31,5 @@ defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write com.apple.TextEdit RichText -int 0
 defaults write -g ApplePressAndHoldEnabled -bool false
 
-{{ end}}
-{{ end}}
+{{ end }}
+{{ end }}
