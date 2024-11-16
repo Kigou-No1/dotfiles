@@ -36,7 +36,7 @@
 	new = green bold
 
 [core]
-	editor = code-insiders
+	editor = nvim 
 	{{- if eq .chezmoi.os "linux" }}
 	{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
     {{      if isExecutable "/mnt/c/Program Files/OpenSSH/ssh.exe" }} 
