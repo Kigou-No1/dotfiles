@@ -1,7 +1,6 @@
 local opt = vim.opt
 
 opt.relativenumber = true
-vim.api.nvim_set_var('mapleader', ' ')
 
 -- search
 opt.smartcase = true
