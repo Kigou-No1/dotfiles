@@ -8,7 +8,7 @@ return {
                     "cpp", "lua", "javascript", "typescript",
                     "rust", "python", "go", "bash",
                     "json", "toml", "yaml", "html", "css",
-                    "dockerfile", "git_config", "gitignore", ""
+                    "dockerfile", "git_config", "gitignore",
                 },
                 highlight = {
                     enable = true, -- ハイライトを有効化
@@ -23,6 +23,9 @@ return {
                   enable = true,
                 },
             })
+        end,
+        opts = function (_, opts)
+            opts.ignore_install = { "help" }
         end
     
     },

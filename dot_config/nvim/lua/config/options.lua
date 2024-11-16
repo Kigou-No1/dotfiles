@@ -1,6 +1,7 @@
 local opt = vim.opt
 
 opt.relativenumber = true
+vim.api.nvim_set_var('mapleader', ' ')
 
 -- search
 opt.smartcase = true
@@ -9,7 +10,6 @@ opt.hlsearch = true
 opt.incsearch = true
 
 -- visual
-opt.ambiwidth = 'double'
 opt.cursorline = true
 opt.wrap = false
 opt.linebreak = false
