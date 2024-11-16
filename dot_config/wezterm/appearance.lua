@@ -2,21 +2,32 @@ local wezterm = require "wezterm";
 local module = {};
 local SOLID_LEFT_ARROW = wezterm.nerdfonts.ple_lower_right_triangle
 local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_upper_left_triangle
-local background_image = "wezterm-wallpaper.jpg"
+local background_image = wezterm.config_dir .. "\\wezterm-wallpaper.jpg" or "./wezterm-wallpaper.jpg"
+
 
 function module.apply_config(config)
     config.font = wezterm.font("Hack Nerd Font");
     config.font_size = 12.0;
     config.command_palette_font_size = 14.0;
-    config.window_background_opacity = 0.60;
+    config.macos_window_background_blur = 20;
     config.command_palette_bg_color = '#4D07FF';
     config.color_scheme = 'Catppuccin Mocha';
-    config.source = { File = background_image, };
 
-    config.window_background_gradient = {
-        colors = { "#000000" },
-    };
-
+    config.background = {
+        {
+            source = {
+            Gradient = {
+            colors = { "#124354", "#001522" }, -- グラデーションのカラーセット
+            orientation = { Linear = { angle = -30.0 } }}},
+            opacity = 0.8, -- 透明度
+            width = "100%", -- 幅
+            height = "100%", -- 高さ
+        },
+        {
+            source = { File = background_image },
+            opacity = 0.3,
+        },
+    }
 
     config.colors = {
         tab_bar = {
