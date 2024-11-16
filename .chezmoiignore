@@ -1,14 +1,23 @@
 {{- if ne .chezmoi.os "windows" }}
 .wslconfig
+.chezmoiscripts/windows
 {{- end }}
 
-{{if eq .chezmoi.os "windows" }}
+{{- if ne .chezmoi.os "darwin" }}
+.chezmoiscripts/mac
+{{- end }}
+
+{{- if ne .chezmoi.os "linux" }}
+{{- if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+.chezmoiscripts/wsl
+{{- end }}
+{{- end }}
+
+{{- if eq .chezmoi.os "windows" }}
 .gnupg
 .tmux.conf
 .zsh
 .zshrc
-.chezmoiscripts/mac
-.chezmoiscripts/wsl
 bin/asdf.sh
 bin/Brewfile
 {{- end }}
