@@ -5,7 +5,7 @@
 
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew bundle --file=$DOTFILES/../brew/Brewfile.mac
+brew bundle --file=../../resources/Brewfile
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y # Install rust silently
 cargo install sheldon # Install Zsh package manager
