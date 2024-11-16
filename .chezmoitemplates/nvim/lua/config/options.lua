@@ -22,3 +22,6 @@ opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
 opt.smartindent = true
+
+vim.opt.completeopt = "menu,menuone,noselect"
+

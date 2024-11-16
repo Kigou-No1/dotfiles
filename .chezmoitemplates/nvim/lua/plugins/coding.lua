@@ -17,10 +17,10 @@ return {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
         dependencies = {
-          "nvim-lua/plenary.nvim",
-          "nvim-tree/nvim-web-devicons",
-          "MunifTanjim/nui.nvim",
-          "3rd/image.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim",
+            "3rd/image.nvim",
         },
     },
     {
@@ -66,24 +66,43 @@ return {
             });
         end,
         dependencies = {
-          "MunifTanjim/nui.nvim",
-          "rcarriga/nvim-notify",
-          }
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        }
     },
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
         keys = {
-          {
-            "<leader>?",
-            function()
-              require("which-key").show({ global = false })
-            end,
-            desc = "Buffer Local Keymaps (which-key)",
-          },
+            {
+                "<leader>?",
+                function()
+                    require("which-key").show({ global = false })
+                end,
+                desc = "Buffer Local Keymaps (which-key)",
+            },
         },
-      },
+    },
     {
-        "akinsho/toggleterm.nvim", version = "*", config = true
-    }
+        "akinsho/toggleterm.nvim",
+        version = "*",
+        config = function ()
+            require("toggleterm").setup({
+                open_mapping = "<C-\\>"
+            })
+        end,
+    },
+    { "github/copilot.vim", lazy=false },
+    {
+        "CopilotC-Nvim/CopilotChat.nvim",
+        branch = "canary",
+        dependencies = {
+            { "github/copilot.vim" }, -- or github/copilot.vim
+            { "nvim-lua/plenary.nvim" },
+        },
+        build = "make tiktoken",
+        opts = {
+            -- See Configuration section for options
+        },
+    },
 }
