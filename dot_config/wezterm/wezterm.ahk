@@ -1,4 +1,6 @@
 #SingleInstance Force
+
+
 #Space::ToggleWindowVisibility("org.wezfurlong.wezterm", "wezterm-gui.exe")
 ToggleWindowVisibility(cls, exe) {
   DetectHiddenWindows(true)
