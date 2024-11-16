@@ -39,7 +39,11 @@
 	editor = code-insiders
 	{{- if eq .chezmoi.os "linux" }}
 	{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
-	sshCommand = "/mnt/c/Windows/System32/OpenSSH/ssh.exe"
+    {{      if isExecutable "/mnt/c/Program Files/OpenSSH/ssh.exe" }} 
+    sshCommand = "/mnt/c/Program Files/OpenSSH/ssh.exe"
+    {{      else }}
+    sshCommand = "/mnt/c/Windows/System32/OpenSSH/ssh.exe"
+    {{      end }}
 	{{   end}}
 	{{- end}}
 

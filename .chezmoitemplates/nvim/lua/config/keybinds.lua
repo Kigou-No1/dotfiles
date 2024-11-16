@@ -12,6 +12,7 @@ set("n", "<leader>e", ":Neotree toggle filesystem position=left<CR>", { desc = "
 
 set("n", "<C-a>", ":BufferPrevious<CR>", { desc = "Go to previous tab", noremap = false, silent = false})
 set("n", "<C-d>", ":BufferNext<CR>", { desc = "Go to next tab", noremap = false, silent = false})
+set("n", "<C-c>", ":BufferClose<CR>", { desc = "Close tab", noremap = false, silent = false})
 
 -- move cursor in insert-mode
 set("i", "<C-l>", "<Right>")
@@ -31,10 +32,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
     set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { buffer = true })
     set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { buffer = true })
     set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { buffer = true })
-    set("n", "<leader>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", { buffer = true })
+    set("n", "<leader>le", "<cmd>lua vim.diagnostic.open_float()<CR>", { buffer = true })
     set("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", { buffer = true })
     set("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", { buffer = true })
-    set("n", "<leader>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", { buffer = true })
-    set("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", { buffer = true })
+    set("n", "<leader>lq", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", { buffer = true })
+    set("n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<CR>", { buffer = true })
   end,
 })
