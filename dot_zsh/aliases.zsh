@@ -21,3 +21,9 @@ alias vi="nvim"
 
 alias edit="code-insiders"
 alias code="code-insiders"
+
+# chezmoi
+alias ch-gadd="chezmoi git -- add "
+alias ch-gcm="chezmoi git -- commit -m "
+alias ch-gps="chezmoi git push"
+alias ch-gst="chezmoi git status"
