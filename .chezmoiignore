@@ -1,19 +1,22 @@
 {{- if ne .chezmoi.os "windows" }}
 .wslconfig
-.chezmoiscripts/windows
 {{- end }}
 
-{{- if ne .chezmoi.os "darwin" }}
-.chezmoiscripts/mac
+{{- if eq .chezmoi.os "darwin" }}
+.chezmoiscripts/windows/**
+.chezmoiscripts/wsl/**
 {{- end }}
 
-{{- if ne .chezmoi.os "linux" }}
-{{- if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
-.chezmoiscripts/wsl
-{{- end }}
-{{- end }}
+{{ if eq .chezmoi.os "linux" }}
+{{ if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+.chezmoiscripts/windows/**
+.chezmoiscripts/mac/**
+{{ end }}
+{{ end }}
 
 {{- if eq .chezmoi.os "windows" }}
+.chezmoiscripts/wsl/**
+.chezmoiscripts/mac/**
 .gnupg
 .tmux.conf
 .zsh
