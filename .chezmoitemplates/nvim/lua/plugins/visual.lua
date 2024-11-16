@@ -44,5 +44,10 @@ return {
             startify.file_icons.provider = "devicons";
             require("alpha").setup(startify.config);
         end,
+        opts = function(_, opts)
+            opts.section.buttons.val = {
+                opts.button("h", "Say hello", ":echo Hello<CR>")
+            }
+        end,
     },
 }
