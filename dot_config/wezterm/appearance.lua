@@ -2,6 +2,7 @@ local wezterm = require "wezterm";
 local module = {};
 local SOLID_LEFT_ARROW = wezterm.nerdfonts.ple_lower_right_triangle
 local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_upper_left_triangle
+local background_image = "wezterm-wallpaper.jpg"
 
 function module.apply_config(config)
     config.font = wezterm.font("Hack Nerd Font");
@@ -9,11 +10,13 @@ function module.apply_config(config)
     config.command_palette_font_size = 14.0;
     config.window_background_opacity = 0.60;
     config.command_palette_bg_color = '#4D07FF';
-    config.color_scheme = 'Catppuccin Mocha'
+    config.color_scheme = 'Catppuccin Mocha';
+    config.source = { File = background_image, };
 
     config.window_background_gradient = {
         colors = { "#000000" },
     };
+
 
     config.colors = {
         tab_bar = {
