@@ -1,7 +1,7 @@
 return {
-    { 
+    {
         "norcalli/nvim-colorizer.lua",
-        config = function ()
+        config = function()
             require("colorizer").setup();
         end,
     },
@@ -22,6 +22,15 @@ return {
             "MunifTanjim/nui.nvim",
             "3rd/image.nvim",
         },
+        opts = {
+            filesystem = {
+                filtered_items = {
+                    visible = true,
+                    hide_dotfiles = false,
+                    hide_gitignore = false,
+                }
+            }
+        }
     },
     {
         "shellRaining/hlchunk.nvim",
@@ -49,18 +58,18 @@ return {
         }
     },
     { "kazhala/close-buffers.nvim", },
-    { 'numToStr/Comment.nvim', }, 
-    { 
-        "windwp/nvim-ts-autotag", 
+    { 'numToStr/Comment.nvim', },
+    {
+        "windwp/nvim-ts-autotag",
         event = { "BufReadPre", "BufNewFile" },
     },
     { "anuvyklack/pretty-fold.nvim", },
-    { "anuvyklack/fold-preview.nvim", dependencies = { "anuvyklack/keymap-amend.nvim" }, },
-    { "rachartier/tiny-inline-diagnostic.nvim", priority=1000 },
+    { "anuvyklack/fold-preview.nvim",           dependencies = { "anuvyklack/keymap-amend.nvim" }, },
+    { "rachartier/tiny-inline-diagnostic.nvim", priority = 1000 },
     {
         "folke/noice.nvim",
         event = "VeryLazy",
-        config = function ()
+        config = function()
             require("noice").setup({
                 background_color = "#000000",
             });
@@ -86,13 +95,13 @@ return {
     {
         "akinsho/toggleterm.nvim",
         version = "*",
-        config = function ()
+        config = function()
             require("toggleterm").setup({
                 open_mapping = "<leader>\\"
             })
         end,
     },
-    { "github/copilot.vim", lazy=false },
+    { "github/copilot.vim", lazy = false },
     {
         "CopilotC-Nvim/CopilotChat.nvim",
         branch = "canary",

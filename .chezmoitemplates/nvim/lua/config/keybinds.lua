@@ -36,6 +36,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     set("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", { buffer = true })
     set("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", { buffer = true })
     set("n", "<leader>lq", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", { buffer = true })
-    set("n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<CR>", { buffer = true })
+    set("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format()<CR>", { buffer = true })
   end,
 })
