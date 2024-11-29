@@ -1,4 +1,4 @@
-export FZF_DEFAULT_OPTS = "--height 40% --border --reverse "
+export FZF_DEFAULT_OPTS="--height 40% --border --reverse "
 
 function ghq-fzf_change_directory() {
   local src=$(ghq list | fzf --preview "eza -l -g -a --icons $(ghq root)/{} | tail -n+4 | awk '{print \$6\"/\"\$8\" \"\$9 \" \" \$10}'")
@@ -20,6 +20,7 @@ function history-fzf() {
 
 zle -N ghq-fzf_change_directory
 bindkey '^g' ghq-fzf_change_directory
+zle -N history-fzf
 bindkey '^r' history-fzf
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
