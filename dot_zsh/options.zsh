@@ -15,8 +15,3 @@ export GPG_TTY=$(tty)
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "/home/hadzuki/.bun/_bun" ] && source "/home/hadzuki/.bun/_bun"
-
-# 補完で小文字でも大文字にマッチさせる
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-# 補完候補を一覧表示したとき、Tabや矢印で選択できるようにする
-zstyle ':completion:*:default' menu select=1
