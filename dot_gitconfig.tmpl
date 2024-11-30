@@ -46,4 +46,13 @@
     {{      end }}
 	{{   end}}
 	{{- end}}
+	{{if eq .chezmoi.os "windows" }}
+	{  if isExecutable "C:\\Program Files\\OpenSSH\\ssh.exe" }
+	sshCommand = 'C:\\Program Files\\OpenSSH\\ssh.exe'
+	{  else }
+	sshCommand = 'C:\\Windows\\System32\\OpenSSH\\ssh.exe'
+	{  end }
+	{{ end }}
 
+[url "git@github.com:"]
+	insteadOf = https://github.com/
