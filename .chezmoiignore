@@ -1,3 +1,4 @@
+.chezmoiscripts/windows/run_once_initialize.ps1
 {{- if ne .chezmoi.os "windows" }}
 .wslconfig
 {{- end }}
